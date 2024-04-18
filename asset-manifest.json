@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/camping_rent/static/css/main.7acaea2f.css",
-    "main.js": "/camping_rent/static/js/main.8544e4c1.js",
+    "main.js": "/camping_rent/static/js/main.799438e0.js",
     "index.html": "/camping_rent/index.html",
     "main.7acaea2f.css.map": "/camping_rent/static/css/main.7acaea2f.css.map",
-    "main.8544e4c1.js.map": "/camping_rent/static/js/main.8544e4c1.js.map"
+    "main.799438e0.js.map": "/camping_rent/static/js/main.799438e0.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.8544e4c1.js"
+    "static/js/main.799438e0.js"
   ]
 }
