@@ -1,20 +1,56 @@
 import { Suspense } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import Loader from 'components/Loader/Loader';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 
 const Header = () => {
   return (
-    <div>
-      {/* <a href="/">Home</a>
-      <a href="catalog">Catalog</a>
-      <a href="favorite">Favorite</a> */}
-      <Link to="/">Home</Link>
-      <Link to="catalog">Catalog</Link>
-      <Link to="favorite">Favorite</Link>
+    <>
+      <AppBar
+        component="header"
+        position="static"
+        style={{ backgroundColor: '#d1e2ec' }}
+      >
+        <Toolbar>
+          <ul>
+            <li style={{ display: 'flex', alignItems: 'center' }}>
+              <Link to="/">
+                <Typography typography="h6" color="orange">
+                  Home
+                </Typography>
+              </Link>
+            </li>
+          </ul>
 
-      <Suspense fallback={'.....LOADING'}>
-        <Outlet />
-      </Suspense>
-    </div>
+          <Link to="catalog">
+            <Typography
+              style={{ marginLeft: 35 }}
+              typography="h6"
+              color="orange"
+            >
+              Catalog
+            </Typography>
+          </Link>
+
+          <Link to="favorite">
+            <Typography
+              style={{ marginLeft: 35 }}
+              typography="h6"
+              color="orange"
+            >
+              Favorite
+            </Typography>
+          </Link>
+        </Toolbar>
+      </AppBar>
+
+      <main>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </main>
+    </>
   );
 };
+
 export default Header;
