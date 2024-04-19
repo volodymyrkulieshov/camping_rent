@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/camping_rent/static/css/main.7acaea2f.css",
-    "main.js": "/camping_rent/static/js/main.799438e0.js",
+    "main.css": "/camping_rent/static/css/main.ccba00d0.css",
+    "main.js": "/camping_rent/static/js/main.5e427d34.js",
+    "static/media/Tails_OutsideVan_MercedesBenz_Sprinter-2.png": "/camping_rent/static/media/Tails_OutsideVan_MercedesBenz_Sprinter-2.19056aed60eed9271c3c.png",
     "index.html": "/camping_rent/index.html",
-    "main.7acaea2f.css.map": "/camping_rent/static/css/main.7acaea2f.css.map",
-    "main.799438e0.js.map": "/camping_rent/static/js/main.799438e0.js.map"
+    "main.ccba00d0.css.map": "/camping_rent/static/css/main.ccba00d0.css.map",
+    "main.5e427d34.js.map": "/camping_rent/static/js/main.5e427d34.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.799438e0.js"
+    "static/css/main.ccba00d0.css",
+    "static/js/main.5e427d34.js"
   ]
 }
