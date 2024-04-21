@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: auto;
   height: auto;
-  background-color: rgba(17, 18, 19, 0.4);
+  background-color: #d1e2ec;
   /* background-size: contain; */
   background-size: 100vw;
   /* background-position: center bottom; */
