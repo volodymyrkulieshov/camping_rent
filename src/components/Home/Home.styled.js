@@ -6,8 +6,8 @@ export const Container = styled.div`
   width: 100vmax;
   height: 100vmax;
   background-image: url(${camper});
-  /* background-size: contain; */
+  background-size: contain;
   background-size: 100vw;
-  /* background-position: center bottom; */
+  background-position: center top;
   background-repeat: no-repeat;
 `;

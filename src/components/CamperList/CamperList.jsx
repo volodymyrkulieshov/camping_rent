@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAllCampers } from '../../redux/camperSelectors';
 import { getAllCampersThunk } from '../../redux/camperThunk';
@@ -6,14 +6,18 @@ import CamperCard from '../CamperCard/CamperCard';
 import { AdvertsList, CamperListWrap, LoadMoreBtn } from './CamperList.styled';
 
 const CamperList = () => {
+  const dispatch = useDispatch();
   const items = useSelector(selectAllCampers);
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllCampersThunk());
-  }, [dispatch]);
+  const [page, setPage] = useState(1);
 
-  const onLoadMore = () => {};
+  useEffect(() => {
+    dispatch(getAllCampersThunk(page));
+  }, [dispatch, page]);
+
+  const handleLoadMore = () => {
+    setPage(prevPage => prevPage + 1);
+  };
 
   return (
     <CamperListWrap>
@@ -24,7 +28,7 @@ const CamperList = () => {
           </li>
         ))}
       </AdvertsList>
-      <LoadMoreBtn type="button" onClick={onLoadMore}>
+      <LoadMoreBtn type="button" onClick={handleLoadMore}>
         Load more
       </LoadMoreBtn>
     </CamperListWrap>

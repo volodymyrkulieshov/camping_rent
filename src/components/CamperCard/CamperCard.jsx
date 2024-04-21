@@ -15,6 +15,11 @@ import {
 } from './CamperCard.styled';
 
 import sprite from '../../sprite.svg';
+import { EquipmentList } from '../EquipList/EquipList';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorites } from '../../redux/camperSelectors';
+import { addFavorites, removeFavorites } from '../../redux/favoritesSlice';
 
 const CamperCard = ({ item }) => {
   const {
@@ -29,6 +34,26 @@ const CamperCard = ({ item }) => {
   } = item;
 
   const normalizedPrice = price.toFixed(2);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const favorites = useSelector(selectFavorites);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (favorites.some(fav => fav._id === item._id)) {
+      setIsFavorite(true);
+    }
+  }, [favorites, item._id]);
+
+  const heartIcon = isFavorite ? 'heartFull' : 'heart';
+
+  const handleSelectFavorite = () => {
+    setIsFavorite(!isFavorite);
+    if (!isFavorite) {
+      dispatch(addFavorites(item));
+    } else {
+      dispatch(removeFavorites(item._id));
+    }
+  };
   return (
     <>
       <CamperCardWrap>
@@ -39,9 +64,9 @@ const CamperCard = ({ item }) => {
           <PriceWrap>
             <CamperName>{name}</CamperName>
             <CamperPrice>{normalizedPrice}</CamperPrice>
-            <FavBtn>
+            <FavBtn type="button" onClick={handleSelectFavorite}>
               <IconBtn>
-                <use href={`${sprite}#heart`} />
+                <use href={`${sprite}#${heartIcon}`} />
               </IconBtn>
             </FavBtn>
           </PriceWrap>
@@ -60,6 +85,7 @@ const CamperCard = ({ item }) => {
             </Location>
           </RateWrap>
           <Description>{description}</Description>
+          <EquipmentList item={item} />
         </ContentWrap>
       </CamperCardWrap>
     </>
