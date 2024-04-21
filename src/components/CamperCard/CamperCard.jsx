@@ -25,9 +25,10 @@ const CamperCard = ({ item }) => {
     location,
     description,
     gallery,
-    // reviews,
+    reviews,
   } = item;
 
+  const normalizedPrice = price.toFixed(2);
   return (
     <>
       <CamperCardWrap>
@@ -37,7 +38,7 @@ const CamperCard = ({ item }) => {
         <ContentWrap>
           <PriceWrap>
             <CamperName>{name}</CamperName>
-            <CamperPrice>{price}</CamperPrice>
+            <CamperPrice>{normalizedPrice}</CamperPrice>
             <FavBtn>
               <IconBtn>
                 <use href={`${sprite}#heart`} />
@@ -49,7 +50,7 @@ const CamperCard = ({ item }) => {
               <IconBtn>
                 <use href={`${sprite}#star`} />
               </IconBtn>
-              {rating}
+              {rating} ({reviews.length} Reviews)
             </Rating>
             <Location>
               <IconBtn>

@@ -15,8 +15,8 @@ export const AdvertsList = styled.ul`
   padding-top: 50px;
 `;
 
-export const LoadBtn = styled.button`
-  border: ${p => p.theme.border.grey};
+export const LoadMoreBtn = styled.button`
+  border: 1px solid rgba(71, 84, 103, 0.2);
   border-radius: 200px;
   padding: 16px 32px;
   min-width: 145px;
@@ -28,6 +28,6 @@ export const LoadBtn = styled.button`
   background-color: transparent;
 
   &:hover {
-    border: ${p => p.theme.border.red};
+    border: 1px solid rgba(228, 72, 72, 1);
   }
 `;

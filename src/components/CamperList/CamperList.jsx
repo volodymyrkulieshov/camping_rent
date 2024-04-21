@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectAllCampers } from '../../redux/camperSelectors';
 import { getAllCampersThunk } from '../../redux/camperThunk';
 import CamperCard from '../CamperCard/CamperCard';
-import { AdvertsList, CamperListWrap } from './CamperList.styled';
+import { AdvertsList, CamperListWrap, LoadMoreBtn } from './CamperList.styled';
 
 const CamperList = () => {
   const items = useSelector(selectAllCampers);
@@ -12,6 +12,8 @@ const CamperList = () => {
   useEffect(() => {
     dispatch(getAllCampersThunk());
   }, [dispatch]);
+
+  const onLoadMore = () => {};
 
   return (
     <CamperListWrap>
@@ -22,6 +24,9 @@ const CamperList = () => {
           </li>
         ))}
       </AdvertsList>
+      <LoadMoreBtn type="button" onClick={onLoadMore}>
+        Load more
+      </LoadMoreBtn>
     </CamperListWrap>
   );
 };
