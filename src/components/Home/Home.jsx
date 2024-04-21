@@ -10,12 +10,12 @@ const Home = () => {
   };
   return (
     <Container>
-      <Typography>
-        <h2>CAMPING RENTAL</h2>
-        <p>
-          Browse our selection, reserve your camper, and get ready to embark on
-          the adventure of a lifetime with us!
-        </p>
+      <Typography variant="h4" gutterBottom>
+        CAMPING RENTAL
+      </Typography>
+      <Typography variant="subtitle2" gutterBottom>
+        Browse our selection, reserve your camper, and get ready to embark on
+        the adventure of a lifetime with us!
       </Typography>
       <Button
         variant="outlined"

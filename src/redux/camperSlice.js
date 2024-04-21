@@ -1,5 +1,5 @@
-const { createSlice } = require('@reduxjs/toolkit');
-const { getAllCampersThunk } = require('./camperThunk');
+import { createSlice } from '@reduxjs/toolkit';
+import { getAllCampersThunk } from './camperThunk';
 
 const initialState = {
   items: [],
@@ -17,7 +17,8 @@ const camperSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getAllCampersThunk.fulfilled, (state, action) => {
-        state.campers = action.payload;
+        state.items = action.payload;
+        state.isLoading = false;
       })
       .addCase(getAllCampersThunk.rejected, (state, action) => {
         state.isLoading = false;
@@ -25,4 +26,4 @@ const camperSlice = createSlice({
       });
   },
 });
-export default camperSlice.reducer;
+export const camperReducer = camperSlice.reducer;

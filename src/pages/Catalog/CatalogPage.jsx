@@ -1,7 +1,12 @@
-import Catalog from 'components/Catalog/Catalog';
+import CamperList from '../../components/CamperList/CamperList';
+import { Container } from './CatalogPage.styled';
 
 const CatalogPage = () => {
-  return <Catalog />;
+  return (
+    <Container>
+      <CamperList />
+    </Container>
+  );
 };
 
 export default CatalogPage;
