@@ -1,10 +1,12 @@
 import CamperList from '../../components/CamperList/CamperList';
-import { Container } from './CatalogPage.styled';
+import { Container, ContentContainer } from './CatalogPage.styled';
 
 const CatalogPage = () => {
   return (
     <Container>
-      <CamperList />
+      <ContentContainer>
+        <CamperList />
+      </ContentContainer>
     </Container>
   );
 };

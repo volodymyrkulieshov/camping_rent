@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import camper from './images/Tails_OutsideVan_MercedesBenz_Sprinter-2.png';
+import camper from '../../components/Home/images/Tails_OutsideVan_MercedesBenz_Sprinter-2.png';
 
 export const Container = styled.div`
   position: fixed;
@@ -13,4 +13,9 @@ export const Container = styled.div`
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+`;
+export const ContentContainer = styled.div`
+  padding: 20px;
+  overflow-y: auto;
+  height: 100vh;
 `;

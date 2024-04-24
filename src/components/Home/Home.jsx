@@ -1,5 +1,5 @@
 import { Button, Typography } from '@mui/material';
-import { Container } from './Home.styled';
+// import { Container } from './Home.styled';
 import { useNavigate } from 'react-router';
 // import Description from './Description';
 
@@ -9,8 +9,9 @@ const Home = () => {
     navigate('/catalog');
   };
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>
+    // <Container>
+    <>
+      <Typography variant="h4" gutterBottom style={{ paddingTop: '50px' }}>
         CAMPING RENTAL
       </Typography>
       <Typography variant="subtitle2" gutterBottom>
@@ -24,7 +25,8 @@ const Home = () => {
       >
         Rent Camp
       </Button>
-    </Container>
+    </>
+    // </Container>
   );
 };
 export default Home;

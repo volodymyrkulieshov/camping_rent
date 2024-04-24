@@ -25,7 +25,7 @@ export const LoadMoreBtn = styled.button`
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.01em;
-  background-color: transparent;
+  background-color: orange;
 
   &:hover {
     border: 1px solid rgba(228, 72, 72, 1);

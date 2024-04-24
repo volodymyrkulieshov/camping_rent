@@ -1,6 +1,14 @@
-const { default: Home } = require('components/Home/Home');
+import { Container, ContentContainer } from './HomePage.styled';
+
+import Home from '../../components/Home/Home';
 
 const HomePage = () => {
-  return <Home />;
+  return (
+    <Container>
+      <ContentContainer>
+        <Home />
+      </ContentContainer>
+    </Container>
+  );
 };
 export default HomePage;

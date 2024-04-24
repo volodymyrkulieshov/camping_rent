@@ -1,6 +1,6 @@
-import { Suspense } from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import Loader from 'components/Loader/Loader';
+// import { Suspense } from 'react';
+import { Link } from 'react-router-dom';
+// import Loader from 'components/Loader/Loader';
 import { AppBar, Toolbar, Typography } from '@mui/material';
 
 const Header = () => {
@@ -44,11 +44,11 @@ const Header = () => {
         </Toolbar>
       </AppBar>
 
-      <main>
+      {/* <main>
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
-      </main>
+      </main> */}
     </>
   );
 };
